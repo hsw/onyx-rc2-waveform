@@ -177,3 +177,6 @@ Not affiliated with ONYX or Rockchip. This came out of porting Android 4.4 to th
 done with an AI coding assistant (Claude); results were checked on the hardware where marked [CONFIRMED].
 
 Code: MIT (`LICENSE`). Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+The EBC driver that reads this file is part of the vendor's GPLv2 kernel, which ONYX distributes without source; see
+[SOURCE-AVAILABILITY.md](https://github.com/hsw/onyx-rc2-ebc/blob/main/SOURCE-AVAILABILITY.md) in onyx-rc2-ebc.

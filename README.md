@@ -11,8 +11,9 @@ vendor's public update.
 
 ## Getting the file
 
-ONYX publishes the RC2 update at <https://onyx-boox.ru/files/robinson2/update.zip>
-(1.9.1-simple 2019-11-05_18-20 db0cce3, 211 912 503 bytes, MD5 `bce0d3914e8acabb494685159fc9a141` as on the vendor page).
+ONYX publishes the RC2 firmware update on its support page
+<https://onyx-boox.ru/support/boox_robinson-crusoe2> (the firmware update download: 1.9.1-simple 2019-11-05_18-20 db0cce3,
+a 211 912 503-byte `update.zip`, MD5 `bce0d3914e8acabb494685159fc9a141` as listed on that page).
 
 ```
 python3 extract_waveform.py update.zip ebc_waveform.bin

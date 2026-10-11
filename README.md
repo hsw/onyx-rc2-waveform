@@ -165,6 +165,22 @@ From the stock RC2 kernel (Linux 3.0.36+, EBC driver banner `V1.0.20 VERSION 201
   - the PMIC temperature is a signed byte but is clamped as unsigned (`> 50 → 25`), so −1 °C becomes 25 °C;
   - the decoder checks the 512-frame limit only after a whole RLE run, so a corrupt stream can write past its table.
 
+## Licensing and linux-firmware
+
+- **The decoder is open** (MIT), and so is this description. **The waveform file is not**: it belongs to E Ink and the panel
+  vendor, and no public licence for redistributing it was found. That ONYX's update can be downloaded does not grant the right to
+  redistribute single files from it. So the file is not in this repository, and it should not go into other public repositories
+  or into images others download.
+- **linux-firmware** accepts only files under a licence that lets anyone redistribute them without registration or payment, for
+  use with the hardware, perpetual and irrevocable, with a patent grant, and needs a `Signed-off-by` from someone entitled to
+  license the file (normally the vendor) (`LICENSE-CRITERIA.md` in the linux-firmware repository).
+  Neither this file nor the R177 file in the panel flash can go there without a written grant from the rights holders.
+- **What works today:** each user extracts the file locally, either from the official update with
+  [`extract_waveform.py`](extract_waveform.py) or from the panel's own SPI flash, which holds the panel's factory waveform
+  `320_R177_AE6A41_ED060KD1U7_TC` (see [onyx-rc2-hardware](https://github.com/hsw/onyx-rc2-hardware) `panel-flash/`). A driver
+  should load it with `request_firmware()` under a name derived from the panel compatible and check the panel ID and the CRC in
+  the WBF header before raising any panel voltage.
+
 ## References
 
 - [fread-ink/inkwave](https://github.com/fread-ink/inkwave): WBF parser (header, RLE with the 0xFC toggle, bits per pixel).
